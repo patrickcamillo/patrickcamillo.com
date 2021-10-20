@@ -1,0 +1,16 @@
+{{- $authorAvatar := .Site.Author.avatar -}}
+<div style="display:grid; grid-template-columns: 1fr 1fr">
+  <div>
+    {{ if $authorAvatar }}
+      <img src="{{ $authorAvatar }}" alt="Author profile picture" width="100" height="auto">
+    {{else}}
+    {{end}}
+  </div>
+  <div>
+    <a href="{{ "/" | relURL }}" class="title">
+      <h1>{{ .Site.Title }}</h1>
+    </a>
+  </div>
+</div>
+<nav>{{- partial "nav.html" . -}}</nav>
+  

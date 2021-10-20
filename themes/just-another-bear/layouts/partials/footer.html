@@ -1,0 +1,15 @@
+<div>
+    {{T `poweredBy`}} <a href="https://gohugo.io/">Hugo</a> & <a href="https://aws.amazon.com/amplify/">AWS Amplify</a>
+</div>
+
+{{- /* Author */ -}}
+<span>&nbsp;©&nbsp;</span>
+{{- with .Site.Params.footer.since -}}
+    <span>
+        {{- if lt . now.Year }}{{ . }} - {{ end }}{{ now.Year -}}
+    </span>
+{{- else -}}
+    <span>{{ now.Year }}</span>
+{{- end -}}
+{{- $authorName := .Site.Author.name | default " " -}}
+<span>&nbsp;{{ $authorName }}</span>

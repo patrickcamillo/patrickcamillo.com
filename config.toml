@@ -1,0 +1,131 @@
+baseURL = "https://patrickcamillo.com/"
+theme = "just-another-bear"
+
+title = "Patrick Camillo"
+
+languageCode = "pt-br"
+defaultContentLanguage = "pt-br"
+
+enableRobotsTXT = true
+
+#disableKinds = ["taxonomy"]
+#ignoreErrors = ["error-disable-taxonomy"]
+
+[author]
+  name = "Patrick Camillo"
+  avatar = "/images/author-resized.jpg"
+
+[params]
+  # The "description" of your website. This is used in the meta data of your generated html.
+  description = "Tecnologia, opiniões sobre a vida, e todo o resto"
+
+  # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
+  # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
+  favicon = "images/favicon.png"
+
+  # These "images" are used for the structured data templates. This will show up, when
+  # services like Twitter or Slack want to generate a preview of a link to your site.
+  # See https://gohugo.io/templates/internal#twitter-cards and
+  # https://gohugo.io/templates/internal#open-graph.
+  images = ["images/share.png"]
+
+  # Another "title" :-). This one is used as the site_name on the Hugo's internal
+  # opengraph structured data template.
+  # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
+  title = "Patrick Camillo"
+
+  # By default, this theme displays dates with a format like "02 Jan, 2006", but
+  # you can customize it by setting the `dateFormat` param in your site's config
+  # file. See [Hugo's Format function docs](https://gohugo.io/functions/format/)
+  # for details. An example TOML config that uses [ISO
+  # 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
+  dateFormat = "2006-01-02"
+  [params.footer]
+    #custom = ''
+    since = 2021
+
+  [languages]
+
+    [languages.pt-br]
+      weight = 1
+      contentDir = 'content/portuguese'
+      languageName = 'Português'
+      [[languages.pt-br.menu.main]]
+        identifier = "home"
+        name = "Início"
+        url = "/"
+        title = "Página inicial"
+        weight = 1
+      [[languages.pt-br.menu.main]]
+        identifier = "sobre"
+        name = "Sobre"
+        url = "/sobre/"
+        title = "Sobre mim"
+        weight = 2
+      [[languages.pt-br.menu.main]]
+        identifier = "blog"
+        name = "Blog"
+        url = "/blog/"
+        title = "Todas as publicações"
+        weight = 3
+      [[languages.pt-br.menu.main]]
+        identifier = "language"
+        name = "🇬🇧 en"
+        url = "/en/"
+        title = "Read in English"
+        weight = 4
+
+    [languages.en]
+      weight = 2
+      contentDir = 'content/english'
+      languageName = 'English'
+      [[languages.en.menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/"
+        title = "Home page"
+        weight = 1
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
+        title = "About me"
+        weight = 2
+      [[languages.en.menu.main]]
+        identifier = "blog"
+        name = "Blog"
+        url = "/blog/"
+        title = "All posts"
+        weight = 3
+      [[languages.en.menu.main]]
+        identifier = "language"
+        name = "🇧🇷 pt-BR"
+        url = "../"
+        title = "Leia em português"
+        weight = 4
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 5
+    ordered = false
+    startLevel = 2
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = 'github'
+      [markup.goldmark.parser.attribute]
+        block = false
+        title = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
+      xhtml = false

@@ -1,0 +1,8 @@
+<div style="padding:10px">
+    {{- range .Site.Menus.main -}}
+    {{- $url := .URL | relLangURL -}}
+        <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+        {{ .Name }}
+        </a>
+    {{- end -}} 
+</div>

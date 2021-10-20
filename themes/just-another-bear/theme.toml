@@ -1,0 +1,22 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+# Using FontAwesome 5.15.4 assets
+
+name = "Just Another Bear"
+license = "MIT"
+licenselink = "https://gitlab.com/pckcml/just-another-bear/-/blob/main/LICENSE"
+description = "A Hugo theme based on »Hugo ʕ•ᴥ•ʔ Bear Blog«. Free, lightweight, featuring just some additions that the author thought was lacking on the original."
+homepage = "https://gitlab.com/pckcml/just-another-bear"
+tags = ["blog", "responsive", "minimal", "seo", "clean", "simple", "light", "minimalist", "mobile", "fast", "white", "minimalistic", "reading", "dark mode"]
+features = ["favicon", "seo", "no stylesheets", "little javascript", "rss", "dark mode", "comments", "multilingual"]
+min_version = "0.81"
+
+[author]
+  name = "Patrick Camillo"
+  homepage = "https://patrickcamillo.com"
+
+# If porting an existing theme
+[original]
+  name = "Hugo ʕ•ᴥ•ʔ Bear Blog"
+  homepage = "https://github.com/janraasch/hugo-bearblog"
+  repo = "https://github.com/janraasch/hugo-bearblog"
