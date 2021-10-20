@@ -3,6 +3,7 @@ title = "Primeiro"
 date = "2021-05-02T09:00:00-03:00"
 draft = false
 toc = false
+comments = true
 
 #
 # description is optional
