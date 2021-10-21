@@ -1,6 +1,6 @@
 +++
 title = "Um servidor em casa"
-date = "2021-09-21T08:04:44-03:00"
+date = "2021-09-21T08:00:00-03:00"
 draft = false
 toc = true
 
@@ -20,7 +20,7 @@ Este artigo não tem intenção de ser um tutorial passo-a-passo de como montar 
 
 Quando falo que tenho um servidor, as pessoas que sabem o que é um servidor se contorcem por dentro. Os servidores usados em empresas realmente são enormes, pesados, e barulhentos demais para se ter em um quarto. Imagina dormir com o som do cooler, o calor 24/7 e as luzes piscando! Porém qualquer computador pode ser um servidor para fins caseiros. Quanto menor, melhor! Eis o meu setup:
 
-![Odroid HC1 ao lado de uma caneta Pilot](/images/servidor-em-casa/img1.jpg)
+![Odroid HC1 ao lado de uma caneta](/images/servidor-em-casa/img1.jpg)
 
 Estou usando um Odroid HC1, que tem uma placa BEM pequena e com apenas algumas conexões. Ele também tem o espaço para um HD de notebook ou SSD. Não vejo muito à venda aqui no Brasil, até porque ele foi [descontinuado](https://www.hardkernel.com/shop/odroid-hc1-home-cloud-one/), mas dei sorte de pagar apenas R$ 220,00 no Mercado Livre em meados de junho de 2020.
 

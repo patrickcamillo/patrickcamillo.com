@@ -1,6 +1,6 @@
 Hi! My name is Patrick.
 
-I live in São Paulo/Brasil. I like technology a lot (I study and write about it), music, books, leatherworking and deep conversations about life. Read my [about](/en/about) page for more.
+I live in São Paulo/Brasil. I'm passionate about technology (I study and write about it), music, books, leatherworking and deep conversations about life. Read my [about](/en/about) page for more.
 
 You can find me on these networks, if that's your thing:
 

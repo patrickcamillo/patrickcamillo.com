@@ -1,6 +1,6 @@
 +++
 title = "A server at home"
-date = "2021-09-21T08:04:44-03:00"
+date = "2021-09-21T08:00:00-03:00"
 draft = false
 toc = true
 

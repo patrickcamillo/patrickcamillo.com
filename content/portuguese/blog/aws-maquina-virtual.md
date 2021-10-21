@@ -42,7 +42,7 @@ Clique na opção `Executar instâncias` no canto superior direito para começar
 
 ### 2. Criando a máquina virtual
 
-Na **etapa 1**, recomendo selecionar a opção `Somente nível gratuito` no menu lateral. Assim, especialmente se estiver fazendo testes, garantimos que estamos selecionando a opção que não vai gerar custos inesperados. Neste guia vamos usar a distribuição CentOS, que você pode digitar na barra de pesquisa. Então pode selecionar a opção `AWS Marketplace` no menu lateral, assim:
+Na **etapa 1**, recomendo selecionar a opção `Somente nível gratuito` no menu lateral. Assim, especialmente se estiver fazendo testes, você garante que está selecionando a opção que não vai gerar custos inesperados. Neste guia vamos usar a distribuição CentOS, que você pode digitar na barra de pesquisa. Então pode selecionar a opção `AWS Marketplace` no menu lateral, assim:
 
 ![Criação de uma instância EC2 na AWS, passo 1](/images/aws-maquina-virtual/img7.png)
 
@@ -52,13 +52,13 @@ A **etapa 2** é a seleção de tipo da instância, o que diz respeito às espec
 
 ![Criação de uma instância EC2 na AWS, passo 2](/images/aws-maquina-virtual/img9.png)
 
-A **etapa 3** pode ser avançada sem alterações. Você poderia selecionar a quantidade de instâncias que deseja executar (só precisamos de uma) e outras opções de rede. Tenha em mente que o nível gratuito oferece 750 horas mensais de instâncias EC2 sendo executadas. Se você executar **uma** instância durante o mês todo, 24 horas por dia, essa quota não será atingida. Porém se executar duas instâncias ou mais, somente a primeira será de nível gratuito e as demais serão cobradas. Cuidado nesse ponto.
+A **etapa 3** pode ser avançada sem alterações. Você poderia selecionar a quantidade de instâncias que deseja executar (só precisamos de uma, o que é a opção marcada por padrão) e outras opções de rede. Tenha em mente que o nível gratuito oferece 750 horas mensais de instâncias EC2 sendo executadas. Se você executar **uma** instância durante o mês todo, 24 horas por dia, essa quota não será atingida. Porém se executar duas instâncias ou mais, somente a primeira será de nível gratuito e as demais serão cobradas. Cuidado nesse ponto.
 
 Na **etapa 4** você pode configurar o armazenamento. Repare na mensagem que diz que usuários do nível gratuito podem obter até 30GB de armazenamento SSD. É o que vamos selecionar, como mostra a imagem:
 
 ![Criação de uma instância EC2 na AWS, passo 4](/images/aws-maquina-virtual/img10.png)
 
-A **etapa 5** também pode ser avançada sem alterações. Nesta etapa é possível marcar a instância com identificadores para diversas finalidades. Particularmente não temos utilidade para isto neste exemplo.
+A **etapa 5** também pode ser avançada sem alterações. Nesta etapa é possível marcar a instância com identificadores para diversas finalidades. Particularmente não temos utilidade para isto agora.
 
 A **etapa 6** serve para configurar algumas regras de segurança e acesso à máquina. Vamos deixar a opção `Criar um grupo de segurança novo` marcada, mantendo as opções padrão. **Opcionalmente** você pode clicar no botão `Adicionar regra` para criar duas novas, como na imagem abaixo:
 
@@ -118,4 +118,4 @@ Essa tabela mostra o quanto dos serviços gratuitos você está usando. No caso 
 
 ## Concluindo
 
-Obrigado por ler até aqui! Para um exemplo prático de uso de uma máquina virtual na AWS, veja [este meu artigo sobre proxy reverso](/blog/proxy-reverso). Você também pode ver a [tag 'aws' no meu site](/tags/aws).
+Obrigado por ler até aqui! Para um exemplo prático de uso de uma máquina virtual na AWS, estou preparando um artigo sobre proxy reverso. Vou lançá-lo até semana que vem. Você também pode ver a [tag 'aws' no meu site](/tags/aws).
