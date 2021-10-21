@@ -69,11 +69,17 @@ enableRobotsTXT = true
         title = "Todas as publicações"
         weight = 3
       [[languages.pt-br.menu.main]]
+        identifier = "cv"
+        name = "Currículo"
+        url = "/files/cv-pt.pdf"
+        title = "Faça download do meu currículo"
+        weight = 4
+      [[languages.pt-br.menu.main]]
         identifier = "language"
         name = "🇬🇧 en"
         url = "/en/"
         title = "Read in English"
-        weight = 4
+        weight = 5
 
     [languages.en]
       weight = 2

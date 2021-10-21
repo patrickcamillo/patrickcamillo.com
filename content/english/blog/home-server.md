@@ -20,7 +20,7 @@ This article is not intended to be a step-by-step tutorial on how to set up such
 
 When I say I have a server, people who know what a server is instantly cringe. The servers used in businesses are really huge, heavy, and too noisy to have in a bedroom. Imagine sleeping with the sound of the cooler, the 24/7 heat and the flashing lights! But any computer can be a server for home purposes. The smaller the better! Here is my setup:
 
-![Odroid HC1 next to a Pilot pen](/images/servidor-em-casa/img1.jpg)
+![Odroid HC1 next to a pen](/images/servidor-em-casa/img1.jpg)
 
 I'm using an Odroid HC1, which has a VERY small board with only a few I/Os. It also has the space for a 2.5" HDD or SSD. I don't see many for sale here in Brazil, specially because it was [discontinued](https://www.hardkernel.com/shop/odroid-hc1-home-cloud-one/), but I was lucky to pay only R$220,00 (around 40 dollars) on MercadoLivre in mid June 2020.
 
