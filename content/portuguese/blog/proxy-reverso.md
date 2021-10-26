@@ -222,4 +222,5 @@ O mesmo para a página `http://rp-kanboard.patrickcamillo.com/`:
 
 [Getting started with self hosting - episode 4](https://mickael.kerjean.me/2018/03/14/getting-started-with-selfhosting-episode-4/)
 [NGINX Reverse Proxy Documentation](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
+[NGINX HTTPS Servers Documentation](https://nginx.org/en/docs/http/configuring_https_servers.html)
 [Beginner’s Guide to NGINX Configuration Files](https://medium.com/adrixus/beginners-guide-to-nginx-configuration-files-527fcd6d5efd)

@@ -12,3 +12,6 @@ other = "Remover filtro"
 
 [issoLang]
 other = "pt_BR"
+
+[noscriptWarning]
+other = "Você precisa habilitar o JavaScript para ler/enviar comentários."

@@ -12,3 +12,6 @@ other = "Remove filter"
 
 [issoLang]
 other = "en"
+
+[noscriptWarning]
+other = "You must enable JavaScript to read/send comments."
