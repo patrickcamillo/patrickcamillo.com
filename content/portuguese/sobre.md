@@ -29,4 +29,4 @@ Neste site, você pode esperar ver artigos sobre alguns temas que desejo explora
 - Música e;
 - Reclamações em geral sobre a situação do mundo (ou não).
 
-Eu ainda não tenho um sistema de comentários nos posts. Me recuso a colocar Disqus porque ele enche o site de propagandas horrendas. Se colocasse Facebook, obrigaria as pessoas a usar a pior rede social do mundo (quem me conhece sabe a opinião forte e bem negativa que eu tenho sobre o Facebook). Então até eu encontrar uma solução, o melhor jeito de falar comigo é por [e-mail](mailto:patrick.camillo@outlook.com)! Qualquer coisa, é só dar um grito lá.
+Quase todos os posts terão uma seção de comentários. Vamos conversar por lá! É sempre saudável trocar umas ideias, então eu realmente encorajo você a dizer alguma coisinha nos posts pelos quais passar. Você também pode conversar diretamente comigo por [e-mail](mailto:patrick.camillo@outlook.com)! Qualquer coisa, é só dar um grito lá.

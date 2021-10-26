@@ -9,3 +9,6 @@ other = "Filtrando por"
 
 [removeFilter]
 other = "Remover filtro"
+
+[issoLang]
+other = "pt_BR"

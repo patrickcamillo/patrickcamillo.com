@@ -29,4 +29,4 @@ On this website, you can expect to see articles about some other themes I want t
 - Music and;
 - Complaint about the world's situation (ok, maybe not).
 
-I still don't have a comment system for my posts. I refuse to put Disqus because if fills the footer with horrifying ads. If I put Facebook, I'll be forcing people to use the worst social network in the world (I have some pretty strong and negative opinions about Facebook). So until I find a solution to this, the best way to talk to me is by [e-mail](mailto:patrick.camillo@outlook.com)! Make sure to reach me there if you wanna say anything.
+Almost every post will have a comment section. Let's talk! It's always healthy to learn from each other, so I really encourage you to leave a comment on the posts you visit. You can also talk directly to me via [e-mail](mailto:patrick.camillo@outlook.com). Let me know if I can do anything for you.

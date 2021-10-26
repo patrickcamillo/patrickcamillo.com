@@ -9,3 +9,6 @@ other = "Filtering for"
 
 [removeFilter]
 other = "Remove filter"
+
+[issoLang]
+other = "en"

@@ -3,10 +3,7 @@ title = "Como montar um proxy reverso com o nginx"
 date = "2021-10-11T19:20:00-03:00"
 draft = true
 toc = true
-
-#
-# description is optional
-#
+comments = true
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
 tags = ["tech", "aws", "pt"]
