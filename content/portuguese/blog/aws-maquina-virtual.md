@@ -115,4 +115,4 @@ Essa tabela mostra o quanto dos serviços gratuitos você está usando. No caso 
 
 ## Concluindo
 
-Obrigado por ler até aqui! Para um exemplo prático de uso de uma máquina virtual na AWS, estou preparando um artigo sobre proxy reverso. Vou lançá-lo até semana que vem. Você também pode ver a [tag 'aws' no meu site](/tags/aws).
+Obrigado por ler até aqui! Para um exemplo prático de uso de uma máquina virtual na AWS, escrevi [este artigo sobre proxy reverso](/blog/proxy-reverso). Você também pode ver a [tag 'aws' no meu site](/tags/aws).

@@ -1,38 +1,45 @@
 +++
-title = "Como montar um proxy reverso com o nginx"
-date = "2021-10-11T19:20:00-03:00"
-draft = true
+title = "Usando o NGINX como proxy reverso"
+date = "2021-10-27T10:00:00-03:00"
+draft = false
 toc = true
 comments = true
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["tech", "aws", "pt"]
+tags = ["tech", "aws", "linux", "pt"]
 +++
 
-Olá! Este é um guia de como usar uma máquina virtual na AWS como proxy reverso para outro servidor. Isso vai ser um pouco extenso, então recomendo usar o índice acima para se localizar melhor.
+Este é um guia de como usar o NGINX como proxy reverso. Isso vai ser um pouco extenso, então recomendo usar o índice acima caso queira avançar para uma etapa específica.
 
 ## Requisitos
 
-- Um serviço hospedado em algum servidor
+**Mínimos**  
+- Um servidor com Linux
+
+**Adicionais**  
 - Uma conta na AWS
-- Um domínio (e acesso para alterar os registros DNS deste)
-- (Opcional) Uma conta no [FreeDNS](https://freedns.afraid.org/)
+- Um domínio
+- Uma conta no [FreeDNS](https://freedns.afraid.org/)
 
 ## O que faz um proxy reverso?
 
 ![Diagrama de um proxy reverso](/images/proxy-reverso/img22.png)
 
-Um servidor de proxy reverso é responsável por receber solicitações, como o `app2.domínio.com` do diagrama acima. Quando essa solicitação está na lista de coisas que ele reconhece, ele redireciona o tráfego para outro lugar. Neste exemplo, essa solicitação seria redirecionada para a porta `10012` do servidor `srv.domínio.com`.
+Um servidor de proxy reverso é responsável por receber solicitações HTTP (como `app2.domínio.com` no diagrama acima). Quando essa solicitação está na lista de servidores que o proxy reverso reconhece, ele redireciona o tráfego para outro lugar. Neste exemplo, a solicitação `app2.domínio.com` seria redirecionada para a porta `10012` do servidor `srv.domínio.com`.
 
-Isso pode ser feito de outras formas também. Você pode ter um servidor executando contâiners Docker em portas diversas porém não expostas externamente. No mesmo servidor, você pode ter um proxy reverso que irá aceitar requisições em diferentes subdomínios, direcionando cada uma delas para cada contâiner.
+Um exemplo de aplicação prática é quando você tem um servidor com diversos containers Docker. Em outro servidor, você pode ter um proxy reverso que irá aceitar requisições em diferentes subdomínios, direcionando cada um deles para cada container correspondente no primeiro servidor.
 
-Neste artigo, vamos fazer como no diagrama, usando dois servidores.
+Também é possível que o proxy reverso esteja no **mesmo** servidor da aplicação. Neste caso, as portas usadas pelas aplicações ficam restritas somente para acesso interno e o proxy reverso se encarrega de ficar na borda esperando conexões e redirecionando de acordo.
 
-## Exemplos de uso
+Neste artigo, vou dar exemplos dos dois setups: usando um ou dois servidores.
 
-A primeira situação em que você pode querer usar esse proxy reverso é quando está montando um [servidor em casa](https://patrickcamillo.com/servidor-em-casa/). A maioria das provedoras de internet bloqueiam certas portas do roteador fornecido por eles para clientes domésticos. Mesmo que você consiga entrar na página de configuração e criar os hosts virtuais, as portas continuam fechadas. Isso aconteceu comigo quando estava lidando com a Vivo e causou bastante frustração. As portas que eu mesmo testei foram 80, 443 e 8080, sendo as duas primeiras as mais importantes quando você está tentando hospedar um serviço web. Nesse caso, é possível liberar portas não padrão de numeração mais alta (eu mesmo usava portas acima do 10000), configurar os serviços para estas portas e usar uma VM do [nível gratuito da AWS](https://aws.amazon.com/pt/free/) caso ele esteja disponível para você. O que o proxy reverso vai fazer é interceptar o tráfego externo e redirecioná-lo para o meu servidor.
+## Mais exemplos de uso real antes de começar
 
-A segunda situação em que podemos usar essa solução é em um ambiente corporativo, como neste exemplo pessoal que eu enfrentei. Trabalhei para uma empresa que fornecia um software normalmente hospedado na infraestrutura dos clientes. Porém a empresa estava crescendo e passou a oferecer soluções em sua própria infraestrutura em caráter experimental. Essas soluções eram servidas na forma de portais de acesso hospedados em servidores web internos. O cenário legado que herdei continha diversos serviços em portas diferentes, que os clientes acessavam com URLs diferentes, como no exemplo:
+Você pode querer usar um proxy reverso quando está montando um [servidor em casa](/blog/servidor-em-casa/). A maioria das provedoras de internet impede a abertura de certas portas do roteador fornecido para clientes domésticos. Mesmo que você consiga entrar na página de configuração e criar os hosts virtuais, as portas continuam fechadas. Isso aconteceu comigo quando estava lidando com a Vivo e causou bastante frustração. As portas que eu testei foram 80, 443 e 8080, as duas primeiras sendo as mais importantes quando você está tentando hospedar um serviço web. Neste caso, é possível liberar portas não padrão de numeração mais alta (como portas acima de 1024), servir as páginas por essas portas e usar uma VM do [nível gratuito da AWS](https://aws.amazon.com/pt/free/) como proxy reverso. O que o proxy reverso vai fazer é interceptar o tráfego externo e redirecioná-lo para o servidor em casa.
+
+---
+
+Outra situação que enfrentei foi em um ambiente corporativo. Trabalhei para uma empresa que fornecia soluções em sua própria infraestrutura para os clientes. Essas soluções eram hospedadas em servidores web, que os clientes acessavam com URLs parecidas com o exemplo abaixo:
 
 ```
 https://portal.exemplo.com:8080
@@ -40,64 +47,34 @@ https://cloud.exemplo.com:9009
 https://demo.exemplo.com:8443
 ```
 
-Sendo todos eles CNAMEs para o mesmo host. Isso gera dois problemas: deselegância para o cliente, pois particularmente me incomoda muito acessar um serviço hospedado assim e; bagunça e confusão quanto mais os serviços crescem.
-Por ser um cliente corporativo, a empresa tinha total liberdade para abrir e expôr somente as portas padrão para servidores web e deixar que o firewall (no meu caso, pfSense) ou um servidor de proxy lide com esses redirecionamentos.
+Todos eram CNAMEs para o mesmo host. Isso gera dois problemas: a presença da porta na URL parece "gambiarra", pois particularmente me incomoda muito acessar um serviço hospedado assim e; isso também gera bagunça e confusão quanto mais os serviços crescem.
+Por ser um cliente corporativo, a empresa tinha total liberdade para usar as portas 80 e 443 e deixar que um servidor de proxy reverso lidasse com esses redirecionamentos internamente.
 
-Uma última informação antes de prosseguirmos: Tenha em mente que, ao usar uma VM na AWS como proxy reverso, todo o seu tráfego passa por ela. Isso não é um problema quando você usar aplicações web simples, mas se você começar a gerar muito tráfego, pode ser cobrado um valor bem alto. Isso acaba tornando esse método caro demais se você for montar um servidor de arquivos em casa, por exemplo.
+## Setup com apenas um servidor
 
-## Configuração inicial - Os serviços locais
+### Serviços locais para demonstração
 
-Para fins de demonstração, vou servir duas aplicações: O [Kanboard](https://kanboard.org/) na porta 10011 e uma página simples que eu fiz em HTML na porta 10012. O `.conf` dessas aplicações se parece com isso:
+Para fins de demonstração, vou servir duas aplicações baseadas em Python. Uma será um simples hello world em [Flask](https://flask.palletsprojects.com/en/2.0.x/quickstart/) e a outra será um sistema de comentários chamado [Isso](https://posativ.org/isso/) (o mesmo utilizado neste site). As portas utilizadas serão a `5000` e a `8011`, respectivamente. Veja o que acontece quando acesso as aplicações direto pelo IP e porta:
 
+![Navegador exibindo páginas web em servidor local](/images/proxy-reverso/img23.png)
+
+Tudo funciona, mas queremos evitar ter que digitar IP e porta para acessar as páginas. Tua situação particular vai ser diferente, mas suponho que seja o mesmo cenário: aplicações sendo servidas em portas diversas. Vamos para a parte do proxy reverso.
+
+### Instalando o NGINX e configurando o proxy reverso
+
+Estou usando o CentOS 7. Antes de instalar o NGINX, preciso instalar o pacote `epel-release` porque o NGINX não vem nas fontes padrão. Pesquise os detalhes específicos caso utilize outra distribuição. Então instale o pacote do NGINX:
 ```
-<VirtualHost *:10012>
-        ServerName pckcml.test
-        DocumentRoot /var/www/t1_colors
-</VirtualHost>
+$ sudo yum install nginx
 ```
 
-Assim, quando eu acesso `http://192.168.25.150:10012` no meu navegador, vejo a seguinte página:
-
-![Navegador exibindo página web em servidor local](/images/proxy-reverso/img2.png)
-
-Normalmente você chega nesse ponto seguindo as instruções de instalação da aplicação que deseja instalar. O Kanboard tem resultado semelhante - eu só o escolhi porque outras aplicações que uso já me fizeram instalar todos os módulos do PHP que eu precisava.
-
-Depois que a aplicação está funcionando de forma local, é necessário abrir as portas no roteador da ISP (no meu caso, Vivo) e testar o acesso externo. A minha tabela de virtual servers no router da Vivo fica assim:
-
-![Tabela de virtual servers no router da Vivo](/images/proxy-reverso/img3.png)
-
-E estou usando o serviço do [FreeDNS](https://freedns.afraid.org/) para não precisar chamar meu servidor por IP, até porque o IP não é fixo. Com isso, o acesso por celular à URL `http://patrickcamillo-rp-home.my.to:10011` no 4G fica assim:
-
-![Navegador exibindo página web pelo celular](/images/proxy-reverso/img4.jpg)
-
-Agora sim podemos prosseguir para a criação da máquina virtual na AWS.
-
-## Executando a instância EC2 na AWS
-
-Caso vá seguir pelo caminho da VM na AWS, você pode usar este guia para criar uma VM lá. Lembre-se de criar as regras de segurança liberando as portas 80 e 443, na etapa 6 deste guia linkado.
-
-Se você for usar um segundo servidor que você já tem, pode prosseguir tendo em mente que daqui pra frente vou supor que você esteja usando a VM na AWS.
-
-## Criando apontamento no DNS para a máquina virtual
-
-Da mesma forma que criei um subdomínio para meu servidor em casa no FreeDNS alguns passos atrás, você pode fazer o mesmo para a VM no AWS. Basta criar um registro para cada serviço desejado, todos apontando para o IP do servidor proxy. Como eu tenho o meu domínio, vou criar hosts A para os serviços, como indicado na imagem abaixo:
-
-![Route53, entrada no DNS criada](/images/proxy-reverso/img15.png)
-
-## Instalando o nginx e configurando o serviço de proxy reverso
-
-Se você usou a mesma imagem de máquina virtual que eu, você precisa instalar o `epel-release` e então instalar o `nginx`:
+Em seguida, vamos habilitar o serviço do NGINX e configurá-lo para iniciar com o sistema:
 ```
-[centos@ip-172-31-40-85 ~]$ sudo yum install epel-release && sudo yum install nginx
-```
-Sendo que o primeiro serve para instalar o repositório `Extra Packages for Enterprise Linux`, pois os repositórios base do CentOS não contém o pacote do nginx.
-
-Em seguida, vamos habilitar o serviço do nginx e configurá-lo para iniciar com o sistema:
-```
-[centos@ip-172-31-40-85 ~]$ sudo systemctl enable nginx
+$ sudo systemctl enable nginx
 Created symlink from /etc/systemd/system/multi-user.target.wants/nginx.service to /usr/lib/systemd/system/nginx.service.
-[centos@ip-172-31-40-85 ~]$ sudo systemctl start nginx
-[centos@ip-172-31-40-85 ~]$ sudo systemctl status nginx
+
+$ sudo systemctl start nginx
+
+$ sudo systemctl status nginx
 ● nginx.service - The nginx HTTP and reverse proxy server
    Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
    Active: active (running) since Thu 2021-10-07 15:07:34 UTC; 14s ago
@@ -108,22 +85,85 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/nginx.service t
    CGroup: /system.slice/nginx.service
            ├─9259 nginx: master process /usr/sbin/nginx
            └─9261 nginx: worker process
-
-Oct 07 15:07:34 ip-172-31-40-85.us-east-2.compute.internal systemd[1]: Starting The nginx HTTP and reverse proxy se.....
-Oct 07 15:07:34 ip-172-31-40-85.us-east-2.compute.internal nginx[9255]: nginx: the configuration file /etc/nginx/ng...ok
-Oct 07 15:07:34 ip-172-31-40-85.us-east-2.compute.internal nginx[9255]: nginx: configuration file /etc/nginx/nginx....ul
-Oct 07 15:07:34 ip-172-31-40-85.us-east-2.compute.internal systemd[1]: Started The nginx HTTP and reverse proxy server.
-Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
-Para criarmos os arquivos de configuração, você precisa criar os diretórios `/etc/nginx/sites-available` e `/etc/nginx/sites-enabled`, e então editar o arquivo `/etc/nginx/nginx.conf`: Este arquivo tem um bloco identificado por `http`, dentro do qual você precisa inserir a linha:
+---
+
+De acordo com a configuração padrão do NGINX (localizada em `/etc/nginx/nginx.conf`), o serviço procura por arquivos de configuração com a extensão `.conf` no diretório `/etc/nginx/conf.d/`. É lá que vamos criar um arquivo para cada site.
+
+Vamos criar os arquivos `/etc/nginx/conf.d/flask.conf` e `/etc/nginx/conf.d/isso.conf`. O conteúdo destes arquivos será, respectivamente:
 ```
-include /etc/nginx/sites-enabled/*;
+server {
+    listen 80;
+    server_name flask.pckcml.test;
+    location / {
+        proxy_pass http://localhost:5000;
+    }
+}
+```
+```
+server {
+    listen 80;
+    server_name isso.pckcml.test;
+    location / {
+        proxy_pass http://localhost:8011;
+    }
+}
 ```
 
-A forma como a configuração vai funcionar é a seguinte: Criaremos arquivos dentro de `sites-available` para configurar o servidor, e então criaremos links simbólicos desse diretório para o diretório `sites-enabled`. Esse diretório agora é verificado pelo ngnix graças à linha que acabamos de inserir no arquivo de configuração dele.
+Observe que o `server_name` de ambos termina em `pckcml.test`. Eu tenho um roteador que me permite criar registros DNS, então eu apontei ambos para o IP desse servidor. Assim:
 
-Agora vamos criar os arquivos `/etc/nginx/sites-available/rp-kanboard.conf` e `/etc/nginx/sites-available/rp-colors.conf` para fazer a nossa configuração. O conteúdo destes arquivos inicialmente será, respectivamente:
+![Registros DNS locais](/images/proxy-reverso/img24.png)
+
+No seu caso, pode ser que você tenha um domínio externo. Use o DNS desse domínio e crie hosts A ou CNAMEs de acordo.
+
+Toda vez que alterar os arquivos do NGINX, execute o comando abaixo para testar as configurações e reiniciar o serviço para aplicar o que foi alterado:
+```
+$ sudo nginx -t && sudo systemctl restart nginx
+```
+
+### Testando o acesso aos serviços com o novo endereço
+
+Se tudo estiver correto, será possível acessar os endereços `flask.pckcml.test` e `isso.pckcml.test`, assim:
+
+![Navegador exibindo páginas web em servidor local](/images/proxy-reverso/img25.png)
+
+Este é o setup mais simples do NGINX, usando um único servidor tanto para as aplicações quanto para o proxy reverso. A situação com dois servidores é ligeiramente diferente.
+
+## Setup com dois servidores
+
+Nesta parte, vou hospedar algumas páginas web no meu servidor em casa. Depois disso, vou usar uma [máquina virtual na AWS](/blog/aws-maquina-virtual) para hospedar o proxy reverso. Também vou usar o DNS do meu domínio.
+
+Uma observação antes de prosseguirmos: Tenha em mente que, ao usar uma VM na AWS como proxy reverso, todo o seu tráfego passa por ela. Isso não é um problema quando você usa aplicações web simples, mas se você começar a gerar muito tráfego, pode ser cobrado um valor bem alto. Isso acaba tornando esse método caro demais se você for montar um servidor de arquivos em casa, por exemplo, pois ele tende a gerar um volume de dados muito maior do que o nível gratuito permite. Cuidado para não gerar custos inesperados!
+
+### Serviços locais para demonstração
+
+Para fins de demonstração, vou servir duas aplicações: O [Kanboard](https://kanboard.org/) na porta `10011` e uma página simples que eu fiz em HTML na porta `10012`. Neste servidor de aplicação vou usar o Apache, apenas para variar um pouco. O `.conf` dessas aplicações se parece com isso:
+
+```
+<VirtualHost *:10012>
+        DocumentRoot /var/www/t1_colors
+</VirtualHost>
+```
+
+Assim, quando eu acesso `http://192.168.25.150:10012` no meu navegador, vejo a seguinte página:
+
+![Navegador exibindo página web em servidor local](/images/proxy-reverso/img2.png)
+
+### Configuração para acesso externo
+
+Depois que a aplicação está funcionando de forma local, é necessário abrir as portas no roteador da ISP (no meu caso, Vivo) e testar o acesso externo. A minha tabela de servidores virtuais no roteador da Vivo fica assim:
+
+![Tabela de servidores virtuais no roteador da Vivo](/images/proxy-reverso/img3.png)
+
+Também estou usando o serviço do [FreeDNS](https://freedns.afraid.org/) para não precisar chamar meu servidor por IP. Criei uma entrada no FreeDNS com o endereço `patrickcamillo-rp-home.my.to` apontando para o meu IP externo. Então acessei a URL `http://patrickcamillo-rp-home.my.to:10011` pelo 4G no celular, para garantir que esteja funcionando externamente. Fica assim:
+
+![Navegador exibindo página web pelo celular](/images/proxy-reverso/img4.jpg)
+
+### Configuração do NGINX na máquina virtual da AWS
+
+A instalação do NGINX na VM segue o mesmo método indicado [mais acima neste artigo](#instalando-o-nginx-e-configurando-o-proxy-reverso). Porém os arquivos `.conf` dos sites devem apontar para o meu servidor em casa, e não para o `localhost`. Mas o conceito é o mesmo:
+
 ```
 server {
     listen 80;
@@ -143,52 +183,47 @@ server {
 }
 ```
 
-E então execute os seguintes comandos para criar um link simbólico desses arquivos:
-```
-[centos@ip-172-31-40-85 ~]$ sudo ln -s /etc/nginx/sites-available/kanboard.conf /etc/nginx/sites-enabled/kanboard.conf
-[centos@ip-172-31-40-85 ~]$ sudo ln -s /etc/nginx/sites-available/colors.conf /etc/nginx/sites-enabled/colors.conf
-```
+Note que existem dois `server_name`: `rp-kanboard` e `rp-colors`. Eu criei ambos como hosts A no meu DNS, assim:
 
-Ao final, podemos executar o comando abaixo para testar as configurações e reiniciar o serviço do nginx para que as mesmas sejam aplicadas:
-```
-[centos@ip-172-31-40-85 ~]$ sudo nginx -t && sudo systemctl restart nginx
-```
+![Route53, entrada no DNS criada](/images/proxy-reverso/img15.png)
 
-## Editando configuração de segurança do SELinux
+Antes de concluir e finalmente acessar as páginas, enfrentei um pequeno problema. Vamos analisar e resolver.
 
-Se você seguiu perfeitamente os passos até aqui, vai notar que ainda não é possível usar a URL do servidor de proxy reverso. Caso faça isso, vai se deparar com a tela a seguir:
+### Possível problema com o NGINX
 
-![Route53, entrada no DNS criada](/images/proxy-reverso/img16.png)
+Se você olhar novamente o diagrama que mostrei no começo do artigo, vai notar que o servidor de proxy (o que tem o NGINX) precisa encaminhar dados para um servidor externo (o que tem as aplicações em si). Porém você pode se deparar com esta tela ao tentar acessar o servidor proxy:
+
+![Erro "502 Bad Gateway" no NGINX](/images/proxy-reverso/img16.png) 
 
 Pelo menos foi o que aconteceu comigo! Caso também tenha acontecido com você, veja a linha de investigação que eu segui abaixo. A solução está no final desta seção.
 
-Entrei com o usuário `root` para ler mais facilmente os logs do nginx, localizados em `/var/log/nginx/`. O primeiro arquivo que investiguei foi o `access.log`. Usando o comando `tail -f -n 0 /var/log/nginx/access.log` e depois disso atualizando a página, vi o seguinte resultado:
+---
+
+Entrei com o usuário `root` para ler mais facilmente os logs do NGINX, localizados em `/var/log/nginx/`. O primeiro arquivo que investiguei foi o `access.log`. Executei o comando `tail -f -n 0 /var/log/nginx/access.log` e depois disso atualizei a página web. Vi o seguinte resultado no terminal:
 ```
 <MEU_IP> - - [07/Oct/2021:20:42:02 +0000] "GET / HTTP/1.1" 502 157 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0" "-"
 ```
-Tudo certo por aqui - O servidor sabe que eu estou requisitando a página.
+Tudo certo por aqui. O servidor sabe que eu estou requisitando a página.
 
 Já no arquivo `error.log`, vi o seguinte:
 ```
 2021/10/07 20:43:12 [crit] 9685#9685: *77 connect() to <IP_DO_MEU_SERVIDOR>:10012 failed (13: Permission denied) while connecting to upstream, client: <MEU_IP>, server: rp-colors.patrickcamillo.com, request: "GET / HTTP/1.1", upstream: "http://<IP_DO_MEU_SERVIDOR>:10012/", host: "rp-colors.patrickcamillo.com"
 ```
 
-Temos algo! Pesquisei um pouco e encontrei [este post no blog do nginx](https://www.nginx.com/blog/using-nginx-plus-with-selinux/). Ele nos diz que o problema envolve o SELinux. Não tenho vergonha de admitir que na data de escrita deste artigo, não tenho muito conhecimento de como funciona o SELinux. Mas o artigo no post já nos dá uma boa introdução. Vamos analisar.
+Temos algo! Ver um erro é sempre melhor do que não ver nada. Pesquisei um pouco e encontrei [este post no blog do NGINX](https://www.nginx.com/blog/using-nginx-plus-with-selinux/). Ele nos diz que o problema envolve o **SELinux**. Não tenho vergonha de admitir que na data de escrita deste artigo, não tenho muito conhecimento de como funciona o SELinux. Mas o post já nos dá uma boa introdução:
 
->O SELinux vem habilitado por padrão em servidores RHEL e CentOS modernos. Cada objeto do sistema operacional (processo, descritor de arquivo, arquivo etc) é rotulado com um contexto do SELinux que define as permissões e operações que um objeto pode realizar. Do RHEL 6.6/CentOS 6.6 em diante, NGINX é rotulado com o contexto `httpd_t`.
+>O SELinux vem habilitado por padrão em servidores modernos RHEL e CentOS. Cada objeto do sistema operacional (processo, descritor de arquivo, arquivo etc) é rotulado com um contexto do SELinux que define as permissões que o objeto tem e operações que ele pode realizar. Do RHEL 6.6/CentOS 6.6 em diante, NGINX é rotulado com o contexto `httpd_t`.
 
-Legal. Com isso, aprendemos por alto como o SELinux funciona e como exatamente ele está atuando sobre o nginx. O artigo continua a explicar que o SELinux concede diversas permissões para o ngnix funcionar, mas a operação de proxy para localizações upstream na rede (no sentido de que o nginx não pode, como cliente, comunicar-se com um servidor).
+Legal. Com isso, aprendemos por alto como o SELinux funciona e como exatamente ele está atuando sobre o NGINX. O artigo continua a explicar que o SELinux concede diversas permissões para o NGINX funcionar, mas a operação de proxy para localizações upstream na rede não é permitida (no sentido de que o NGINX não pode, como cliente, comunicar-se com um servidor externo).
 
-O artigo mostra como é possível desabilitar a atuação completa do SELinux sobre o nginx de forma temporária ou permanente. Mas isso não é muito legal, pois pode abrir brechas de segurança desnecessárias e perigosas. Em nenhum contexto é interessante simplesmente desabilitar a segurança completamente (lembre-se das permissões de rede da instância EC2 mais acima neste artigo).
+O artigo mostra como é possível desabilitar a atuação completa do SELinux sobre o NGINX de forma temporária ou permanente. Mas isso não é muito legal, pois pode abrir brechas de segurança desnecessárias e perigosas. Em nenhum contexto é interessante desabilitar a segurança completamente. Podemos investigar precisamente qual o parâmetro do SELinux que está impedindo a conexão e alterar *somente* ele.
 
-Em vez de desabilitar completamente, podemos investigar precisamente qual o parâmetro do SELinux que está impactando. Na minha pesquisa, descobri que ele pode ser diferente mesmo em cenários semelhantes. Então você pode querer investigar o seu problema específico, como vou fazer a seguir.
-
-Execute o comando `tail -f -n 0 /var/log/audit/audit.log` e tente acessar novamente a página. Uma das mensagens que aparece é a seguinte:
+Executei o comando `tail -f -n 0 /var/log/audit/audit.log` e tentei acessar novamente a página. Uma das mensagens que aparece no terminal é a seguinte:
 ```
 type=AVC msg=audit(1633647336.240:1355): avc:  denied  { name_connect } for  pid=9685 comm="nginx" dest=10012 scontext=system_u:system_r:httpd_t:s0 tcontext=system_u:object_r:unreserved_port_t:s0 tclass=tcp_socket permissive=0
 ```
 
-Podemos encontrar a explicação dessa mensagem dada pelo próprio sistema, usando o pacote `audit2why` e passando a mensagem de erro, da seguinte maneira: `grep 1633647336.240:1355 /var/log/audit/audit.log | audit2why`. A saída é a seguinte:
+Podemos pesquisar a explicação desta mensagem no próprio sistema, usando o pacote `audit2why`. Executei este comando: `grep 1633647336.240:1355 /var/log/audit/audit.log | audit2why`. A saída dele é a seguinte:
 ```
 Was caused by:
 One of the following booleans was set incorrectly.
@@ -204,11 +239,13 @@ Allow access by executing:
 # setsebool -P nis_enabled 1
 ```
 
-A solução que podemos aplicar é o primiero comando sugerido pela ferramenta: `setsebool -P httpd_can_network_connect 1`, onde vamos ativar essa variável para "permitir que módulos e scripts HTTP iniciem conexões com uma rede ou porta remota", definição retirada [desta documentação](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-managing_confined_services-the_apache_http_server-booleans).
+O primeiro comando sugerido pela ferramenta serve para ativar uma variável `httpd_can_network_connect`. Ela "permite que módulos e scripts HTTP iniciem conexões com uma rede ou porta remota", definição que eu retirei [desta documentação](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-managing_confined_services-the_apache_http_server-booleans).
 
-## Concluindo
+Então, basta executar o comando `setsebool -P httpd_can_network_connect 1` e podemos partir para a próxima etapa.
 
-Finalmente, podemos então acessar a página `http://rp-colors.patrickcamillo.com/` e ver o seguinte resultado:
+### Testando o acesso aos serviços com o novo endereço
+
+Finalmente, pude acessar a página `http://rp-colors.patrickcamillo.com/` e ver o seguinte resultado:
 
 ![Resultado final: Proxy reverso funcionando para a página "colors"](/images/proxy-reverso/img17.png)
 
@@ -216,11 +253,19 @@ O mesmo para a página `http://rp-kanboard.patrickcamillo.com/`:
 
 ![Resultado final: Proxy reverso funcionando para a página "kanboard"](/images/proxy-reverso/img18.png)
 
+## Conclusão
+
+Este artigo ensinou como funciona um proxy reverso e como se configura um desses usando o NGINX. Aprendemos juntos também o funcionamento básico do SELinux. Ambas ferramentas possuem diversas diretrizes e configurações que valem muito a pena pesquisar mais a fundo e entender como funcionam.
+
+Se você já tem algum conhecimento de servidores web, notou que eu não cheguei a usar HTTPS, mesmo em um serviço exposto externamente. Estou reservando isso para um artigo no qual vou me aprofundar mais em algumas configurações do NGINX, bem como a parte de gerar um certificado SSL/TLS gratuito com o Let's Encrypt. Aguarde novidades!
+
+Em todo caso, muito obrigado por acompanhar até aqui. Como sempre, se tiver alguma dúvida não deixe de usar os comentários abaixo. Valeu!
+
 ---
 
-### Referências
+## Referências
 
-[Getting started with self hosting - episode 4](https://mickael.kerjean.me/2018/03/14/getting-started-with-selfhosting-episode-4/)
-[NGINX Reverse Proxy Documentation](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
-[NGINX HTTPS Servers Documentation](https://nginx.org/en/docs/http/configuring_https_servers.html)
-[Beginner’s Guide to NGINX Configuration Files](https://medium.com/adrixus/beginners-guide-to-nginx-configuration-files-527fcd6d5efd)
+[Getting started with self hosting - episode 4](https://mickael.kerjean.me/2018/03/14/getting-started-with-selfhosting-episode-4/)  
+[NGINX Reverse Proxy Documentation](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)  
+[Using NGINX and NGINX Plus with SELinux](https://www.nginx.com/blog/using-nginx-plus-with-selinux/)  
+[SELinux User's and Administrator's Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-managing_confined_services-the_apache_http_server-booleans)
