@@ -103,10 +103,10 @@ enableRobotsTXT = true
         url = "/blog/"
         title = "All posts"
         weight = 3
-      [[languages.pt-br.menu.main]]
+      [[languages.en.menu.main]]
         identifier = "cv"
         name = "Resume"
-        url = "/files/cv-en.pdf"
+        url = "../files/cv-en.pdf"
         title = "Download my resume"
         weight = 4
       [[languages.en.menu.main]]
