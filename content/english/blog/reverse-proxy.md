@@ -3,7 +3,7 @@ title = "Using NGINX as a reverse proxy"
 date = "2021-10-27T10:00:00-03:00"
 draft = false
 toc = true
-comments = true
+# comments = true
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
 tags = ["tech", "aws", "linux", "en"]

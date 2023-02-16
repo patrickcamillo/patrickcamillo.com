@@ -3,7 +3,7 @@ title = "Como criar uma máquina virtual na AWS - O jeito fácil e rápido"
 date = "2021-10-11T13:00:00-03:00"
 draft = false
 toc = true
-comments = true
+# comments = true
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
 tags = ["tech", "aws", "pt"]

@@ -3,7 +3,7 @@ title = "Um servidor em casa"
 date = "2021-09-21T08:00:00-03:00"
 draft = false
 toc = true
-comments = true
+# comments = true
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
 tags = ["tech", "pt"]

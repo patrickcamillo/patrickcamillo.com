@@ -3,7 +3,7 @@ title = "Histórias"
 date = "2021-05-17T09:00:00-03:00"
 draft = true
 toc = false
-comments = true
+# comments = true
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
 tags = ["non-tech", "life", "pt"]

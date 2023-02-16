@@ -3,7 +3,7 @@ title = "Privacidade digital"
 date = "2021-09-19T20:00:00-03:00"
 draft = true
 toc = false
-comments = true
+# comments = true
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
 tags = ["tech", "life", "pt"]
