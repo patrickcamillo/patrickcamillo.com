@@ -6,13 +6,9 @@ You can find me on these networks, if that's your thing:
 
 {{< awesome fab fa-github >}} [GitHub](https://github.com/pckcml)  
 {{< awesome fab fa-mastodon >}} [Mastodon](https://mastodon.social/@patrickcamillo)  
-{{< awesome fas fa-camera >}} [Pixelfed](https://pixelfed.social/patrickcamillo)  
-{{< awesome fas fa-asterisk >}} [Diaspora](https://wk3.org/people/b55df8008f55013bd1cf00163e73147f)  
 {{< awesome fab fa-linkedin >}} [LinkedIn](https://www.linkedin.com/in/patrickcamillo/)  
 {{< awesome fab fa-gitlab >}} [GitLab](https://gitlab.com/pckcml)  
 {{< awesome fab fa-instagram >}} [Instagram](https://www.instagram.com/patrickcamillo_/)  
-{{< awesome fab fa-twitter >}} [Twitter](https://twitter.com/patrickcamillo_)  
-{{< awesome fab fa-telegram >}} [Telegram](https://t.me/patrickcamillo)  
 {{< awesome fab fa-youtube >}} [YouTube](https://www.youtube.com/c/PatrickCamillo)  
 {{< awesome fab fa-spotify >}} [Spotify](https://open.spotify.com/user/31nk7asusyvagli4tqubzad3755y)  
 {{< awesome fas fa-envelope >}} [Email](mailto:patrick.camillo@outlook.com)  
