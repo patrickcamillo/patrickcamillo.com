@@ -2,7 +2,8 @@
     <a href="#{{ .Destination | md5 }}-lightbox"><img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}"></a>
     <figcaption>
         <!-- {{ if .Title }} -->
-        <p>{{ .Title | markdownify }}</p>
+        <p>{{ .Title }}</p>
+        <!-- <p>{{ .Title | markdownify }}</p> -->
         <!-- {{ else if .Text }} -->
         <!-- <p>{{ .Text | markdownify }}</p> -->
         <!-- {{ end }} -->
