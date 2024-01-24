@@ -10,7 +10,7 @@ other = "Filtering for"
 [removeFilter]
 other = "Remove filter"
 
-[issoLang]
+[giscusLang]
 other = "en"
 
 [noscriptWarning]
