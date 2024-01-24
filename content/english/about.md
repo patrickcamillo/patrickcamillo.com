@@ -1,11 +1,12 @@
 +++
 title = "About"
 toc = true
+comments = true
 +++
 
 ## My personal life
 
-I'm 25 years old and live in São Paulo, Brazil. I love progressive metal and play a little bit of [guitar](https://www.youtube.com/watch?v=BgpF-5cEExs). I enjoy making some stuff with leather from time to time, and love to cook at home.
+I'm 26 years old and live in São Paulo, Brazil. I love progressive metal and play a little bit of [guitar](https://www.youtube.com/watch?v=BgpF-5cEExs). I enjoy making some stuff with leather from time to time, and love to cook at home.
 
 Most of my hobbies and skills are centered around computers - this website and the way I created it are evidence of that. I currently have a self-improvement project focused on broadening my world view, getting mental clarity on some topics, learning new things, and making friends along the way. This website will be, among other things, a documentation of my progress and evolution on this project.
 
@@ -28,4 +29,4 @@ On this website, you can expect to see articles about some other themes I want t
 - Cooking some good eatable food and;
 - Leatherworking and my complicated relationship with artistic processes.
 
-I wish every post had a comment section so we could talk! Unfortunately, I had to take the comment section down because of some unexpected AWS costs on the VM that was hosting it. But it's still always healthy to learn from each other, so I really encourage you to talk directly to me via [e-mail](mailto:patrick.camillo@outlook.com) or on [Mastodon](https://mastodon.social/@patrickcamillo). Let me know if I can do anything for you.
+In principle, all my posts will have comments. I apologise for requiring a GitHub login to comment, but it's the best way I've found for now. It's always good to exchange ideas, so I really encourage you to say something about the posts you see. You can also chat to me directly via [email](mailto:patrick.camillo@outlook.com) or [Mastodon](https://mastodon.social/@patrickcamillo)!

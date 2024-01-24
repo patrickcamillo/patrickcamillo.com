@@ -1,11 +1,12 @@
 +++
 title = "Sobre"
 toc = true
+comments = true
 +++
 
 ## Minha vida pessoal
 
-Tenho 25 anos e moro em São Paulo, capital. Gosto bastante de metal e toco bem pouquinho de [violão](https://www.youtube.com/watch?v=BgpF-5cEExs). Faço umas coisas de couro de vez em quando, e gosto de cozinhar.
+Tenho 26 anos e moro em São Paulo, capital. Gosto bastante de metal e toco bem pouquinho de [violão](https://www.youtube.com/watch?v=BgpF-5cEExs). Faço umas coisas de couro de vez em quando, e gosto de cozinhar.
 
 A maioria dos meus outros hobbies e habilidades giram em torno de computadores - este site e a forma como o criei evidenciam isto. Estou no meio de um projeto de melhoria pessoal com o foco em ampliar minha visão de mundo, obter clareza mental em alguns tópicos, aprender coisas, e fazer amigos no meio do caminho. Esse site será, dentre outras coisas, uma documentação do meu progresso e evolução nisso.
 
@@ -28,4 +29,4 @@ Neste site, você pode esperar ver artigos sobre alguns temas que desejo explora
 - Cozinhar umas comidinhas gostosas e;
 - Trabalhos em couro e minha relação complicada com processos artísticos.
 
-Gostaria que meus posts tivessem uma seção de comentários. Infelizmente tive que desligar a VM na AWS responsável por hospedar os comentários por conta de alguns custos inesperados. Porém continua sendo sempre saudável trocar umas ideias, então eu realmente encorajo você a dizer alguma coisinha sobre os posts pelos quais passar. Você pode conversar diretamente comigo por [e-mail](mailto:patrick.camillo@outlook.com) ou pelo [Mastodon](https://mastodon.social/@patrickcamillo)! Qualquer coisa, é só dar um grito lá.
+A princípio todos os meus posts terão comentários. Peço perdão por exigir login no GitHub para comentar, mas foi a melhor forma que encontrei por enquanto. É sempre saudável trocar umas ideias, então eu realmente encorajo você a dizer alguma coisinha sobre os posts pelos quais passar. Você também pode conversar diretamente comigo por [e-mail](mailto:patrick.camillo@outlook.com) ou pelo [Mastodon](https://mastodon.social/@patrickcamillo)!
