@@ -37,7 +37,7 @@ Tou aceitando livros nesses temas aqui, por ordem de preferência:
 > Normalmente tamanho 43
 
 - **Jamais** gaste mais do que R$ 200,00 em um tênis pra mim.
-- Gosto de Nike, New Balance, Olympikus, Mizuno, Adidas, Puma. Não curto muito All Star. Se quiser me surpreender com um estilo botinha pode ser também, mas nunca usei então não sei se vou curtir muito.
+- Gosto de Nike, New Balance, Olympikus, Mizuno, Adidas, Puma. Não curto muito All Star, e também não uso sapatênis. Eu prezo demais pelo conforto acima do estilo. Se quiser me surpreender com um estilo botinha pode ser também, mas nunca usei então não sei se vou curtir muito.
 - Atualmente tou querendo um que seja todo branco, estilo esses abaixo:
   - {{< details "Clique aqui pra ver" >}}
 
