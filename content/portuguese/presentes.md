@@ -13,6 +13,8 @@ Vou fazer tudo separado por categoria. Não necessariamente vou incluir um link 
 ## Livros
 Livro eu nem faço questão de que seja novo, pode ser de sebo tranquilamente. Nunca gaste mais do que R$ 40,00 em um livro, pelo menos não esses de tamanho normal. Se for alguma coisa muito especial aí é claro que vai fugir desse valor, mas por enquanto não tem nenhum assim na lista.
 
+Para saber quais livros eu ainda não li mas tenho interesse, [clique aqui para ver meu perfil no site GoodReads](https://www.goodreads.com/review/list/165050247-patrick-camillo?shelf=to-read). Não é que eu queira **todos** dessa lista, mas é bom pra ter uma ideia.
+
 Tou aceitando livros nesses temas aqui, por ordem de preferência:
 
 - Política, história em geral, socialismo, comunismo, sociologia, filosofia
