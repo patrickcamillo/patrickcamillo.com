@@ -4,7 +4,7 @@ I live in São Paulo/Brasil. I'm passionate about technology (I study and write 
 
 You can find me on these networks, if that's your thing:
 
-{{< awesome fab fa-mastodon >}} [Mastodon](https://mastodon.social/@patrickcamillo)  
+{{< awesome fab fa-mastodon >}} [Mastodon](https://ursal.zone/@patrickcamillo)  
 {{< awesome fab fa-instagram >}} [Instagram](https://www.instagram.com/patrickcamillo_/)  
 {{< awesome fab fa-goodreads >}} [GoodReads](https://www.goodreads.com/user/show/165050247-patrick-camillo)  
 {{< awesome fab fa-lastfm >}} [last.fm](https://www.last.fm/user/patrickcamillo)  

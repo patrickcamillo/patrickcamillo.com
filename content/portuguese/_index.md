@@ -4,7 +4,7 @@ Moro em São Paulo. Gosto muito de tecnologia (estudo e escrevo sobre isso), mú
 
 Você pode me encontrar nas seguintes redes, se isso for a sua praia:
 
-{{< awesome fab fa-mastodon >}} [Mastodon](https://mastodon.social/@patrickcamillo)  
+{{< awesome fab fa-mastodon >}} [Mastodon](https://ursal.zone/@patrickcamillo)  
 {{< awesome fab fa-instagram >}} [Instagram](https://www.instagram.com/patrickcamillo_/)  
 {{< awesome fab fa-goodreads >}} [GoodReads](https://www.goodreads.com/user/show/165050247-patrick-camillo)  
 {{< awesome fab fa-lastfm >}} [last.fm](https://www.last.fm/user/patrickcamillo)  
