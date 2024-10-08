@@ -15,3 +15,21 @@ other = "pt"
 
 [noscriptWarning]
 other = "Você precisa habilitar o JavaScript para ler/enviar comentários."
+
+[commentsDesc1]
+other = "Você pode usar sua conta no Fediverso (por exemplo Mastodon, e muitas outras redes) e responder a "
+
+[commentsDesc2]
+other = "este post"
+
+[commentsDesc3]
+other = "para comentar aqui."
+
+[comments]
+other = "Comentários"
+
+[commentLoad]
+other = "Carregando comentários do Fediverso..."
+
+[noComments]
+other = "Nenhum comentário."

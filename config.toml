@@ -17,7 +17,7 @@ enableRobotsTXT = true
 
 [params]
   # The "description" of your website. This is used in the meta data of your generated html.
-  description = "Tecnologia, opiniões sobre a vida, e todo o resto"
+  description = "Coisas da vida, tecnologia, e um pouco mais"
 
   # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
   # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
@@ -141,3 +141,8 @@ enableRobotsTXT = true
       hardWraps = false
       unsafe = false
       xhtml = false
+
+[params.comment]
+  [params.comment.fediverse]
+    host = "ursal.zone"
+    user = "patrickcamillo"

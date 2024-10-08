@@ -15,3 +15,21 @@ other = "en"
 
 [noscriptWarning]
 other = "You must enable JavaScript to read/send comments."
+
+[commentsDesc1]
+other = "You can use your Fediverse (i.e. Mastodon, among many others) account to reply to "
+
+[commentsDesc2]
+other = "this post"
+
+[commentsDesc3]
+other = "to leave a comment here."
+
+[comments]
+other = "Comments"
+
+[commentLoad]
+other = "Loading comments from the Fediverse..."
+
+[noComments]
+other = "No comments found."
