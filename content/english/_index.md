@@ -11,7 +11,7 @@ You can find me on these networks, if that's your thing:
 {{< awesome fas fa-video >}} [MyAnimeList](https://myanimelist.net/profile/patchk)  
 {{< awesome fas fa-video >}} [Letterboxd](https://letterboxd.com/patchk/films/by/date/)  
 {{< awesome fab fa-youtube >}} [YouTube](https://www.youtube.com/c/PatrickCamillo)  
-{{< awesome fab fa-github >}} [GitHub](https://github.com/pckcml)  
+{{< awesome fab fa-github >}} [GitHub](https://github.com/patrickcamillo)  
 {{< awesome fab fa-linkedin >}} [LinkedIn](https://www.linkedin.com/in/patrickcamillo/)  
 {{< awesome fas fa-envelope >}} [Email](mailto:patrick.camillo@outlook.com)  
 
