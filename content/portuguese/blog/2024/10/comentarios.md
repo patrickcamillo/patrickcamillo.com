@@ -7,7 +7,7 @@ comments = true
 fediverse = 113273777798787692
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["pt","tech","hugo","mastodon"]
+tags = ["ptbr","tech","hugo","mastodon"]
 +++
 
 ## Introdução

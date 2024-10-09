@@ -6,7 +6,7 @@ toc = true
 comments = false
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["tech", "aws", "linux", "pt"]
+tags = ["tech", "aws", "linux", "ptbr"]
 +++
 
 Este é um guia de como usar o NGINX como proxy reverso. Isso vai ser um pouco extenso, então recomendo usar o índice acima caso queira avançar para uma etapa específica.

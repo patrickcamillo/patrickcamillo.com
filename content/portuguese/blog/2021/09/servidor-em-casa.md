@@ -6,7 +6,7 @@ toc = true
 comments = false
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["tech", "pt"]
+tags = ["tech", "ptbr"]
 +++
 
 Nos últimos meses aprendi a configurar um servidor Linux do zero, sem interface gráfica, e estive usando aplicações hospedadas nele para facilitar algumas coisas na minha vida. O motivo para fazer assim - em vez de pagar um dos vários serviços que já existem - foi por pura vontade de aprender e fazer acontecer.

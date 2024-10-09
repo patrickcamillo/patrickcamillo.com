@@ -1,2 +1,3 @@
 *.draft.*
 .hugo_build.lock
+.vscode

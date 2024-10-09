@@ -6,7 +6,7 @@ toc = true
 comments = false
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["tech", "aws", "pt"]
+tags = ["tech", "aws", "ptbr"]
 +++
 
 Olá! Neste artigo eu vou te ensinar a criar uma máquina virtual Linux na AWS. Eu disse no título que é o jeito fácil, pois existem formas de automatizar isso com outras ferramentas. Mas se você quer simplesmente começar logo, este artigo vai direto ao ponto.
