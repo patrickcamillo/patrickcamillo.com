@@ -6,7 +6,7 @@ toc = true
 comments = false
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["tech", "aws", "ptbr"]
+tags = ["tech","aws","ptbr"]
 +++
 
 Olá! Neste artigo eu vou te ensinar a criar uma máquina virtual Linux na AWS. Eu disse no título que é o jeito fácil, pois existem formas de automatizar isso com outras ferramentas. Mas se você quer simplesmente começar logo, este artigo vai direto ao ponto.
@@ -115,4 +115,4 @@ Essa tabela mostra o quanto dos serviços gratuitos você está usando. No caso 
 
 ## Concluindo
 
-Obrigado por ler até aqui! Para um exemplo prático de uso de uma máquina virtual na AWS, escrevi [este artigo sobre proxy reverso](/blog/proxy-reverso). Você também pode ver a [tag 'aws' no meu site](/tags/aws).
+Obrigado por ler até aqui! Para um exemplo prático de uso de uma máquina virtual na AWS, escrevi [este artigo sobre proxy reverso](/blog/2021/10/proxy-reverso/). Você também pode ver a [tag 'aws' no meu site](/tags/aws).

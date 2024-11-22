@@ -7,8 +7,10 @@ comments = true
 fediverse = 113478985799173651
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["ptbr","livros","pensamentos"]
+tags = ["ptbr","livros","pensamentos","non-tech"]
 +++
+
+{{< callout emoji="ℹ️" text="Esta análise não tem revelações significativas acerca do enredo do livro." >}}
 
 Eu perdi poucas pessoas próximas de mim ao longo da minha vida, o que é bom. Mas perder minha avó no começo desse ano foi algo quase inédito, e ainda é cedo pra sequer estar perto de processar tudo que senti desde então. Ainda me pego pensando em diversas coisas relacionadas à forma como as coisas aconteceram, e certas lembranças me fazem chorar muito.
 

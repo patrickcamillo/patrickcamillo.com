@@ -7,7 +7,7 @@ comments = true
 fediverse = 113275058017271413
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["vida", "exercícios", "alimentação", "ptbr", "non-tech"]
+tags = ["vida","exercícios","alimentação","ptbr","non-tech"]
 +++
 
 Eu não gosto da ideia de frequentar academia. Nunca pisei em uma, mas já não gosto da carga mental do ambiente, nunca gostei. Não é problema ter que conhecer as pessoas e instrutores, aprender a usar aparelhos etc. Isso é o de menos. Acho que meu principal problema até pouco tempo atrás era meu corpo. Simplesmente não me sentia bem com a ideia da exposição (e não me sinto ainda). Mas *esta parte* está começando a mudar.

@@ -1,9 +1,18 @@
 <style>
+    :root {
+      --font-size: 1.0rem;
+
+      --block-border-width: 1px;
+      --block-border-radius: 3px;
+
+      --mastodon-comment-indent: 40px;
+    }
+
     body {
       font-family: Verdana, sans-serif;
       margin: auto;
       padding: 20px;
-      max-width: 720px;
+      max-width: 900px;
       text-align: left;
       background-color: #fff;
       word-wrap: break-word;
@@ -188,6 +197,9 @@
     .mastodon-comment p {
       margin-bottom: 0px;
     }
+    .mastodon-comment img {
+      border: none;
+    }
     .mastodon-comment .author {
       padding-top:0;
       display:flex;
@@ -292,6 +304,10 @@
   
       .helptext {
         color: #aaa;
+      }
+
+      .mastodon-comment img {
+        border: none;
       }
     }
   

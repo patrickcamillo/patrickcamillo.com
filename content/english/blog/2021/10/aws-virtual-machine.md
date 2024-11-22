@@ -115,4 +115,4 @@ This table shows how much of the free services you are using. For the virtual ma
 
 ## Conclusion
 
-Thanks for reading! For a practical example of how you can use a virtual machine on AWS, you can read [my article about using NGINX as a reverse proxy](/en/blog/reverse-proxy). You can also check the ['aws' tag on my website](/en/tags/aws).
+Thanks for reading! For a practical example of how you can use a virtual machine on AWS, you can read [my article about using NGINX as a reverse proxy](/en/blog/2021/10/reverse-proxy/). You can also check the ['aws' tag on my website](/en/tags/aws).

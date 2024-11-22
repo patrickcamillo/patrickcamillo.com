@@ -35,7 +35,7 @@ In this article, I'll give examples of the two setups: using one or two servers.
 
 ## More real world examples before we begin
 
-You may want to use a reverse proxy when setting up a [home server](/en/blog/home-server/). Most ISPs prevent the opening of certain ports on the router provided for residential customers. Even if you can get into the setup page and create the virtual hosts, the ports remain closed. This happened to me when I was dealing with Vivo here in Brazil and it caused a lot of frustration. The ports I tested were 80, 443 and 8080, the first two being the most important when you are trying to host a web service. In this case, you can open non-standard higher numbered ports (such as ports above 1024), serve the pages over those ports and use a virtual machine on [AWS' Free Tier](https://aws.amazon.com/free/) as a reverse proxy. What the reverse proxy will do is intercept external traffic and redirect it to the server at home.
+You may want to use a reverse proxy when setting up a [home server](/en/blog/2021/09/home-server///). Most ISPs prevent the opening of certain ports on the router provided for residential customers. Even if you can get into the setup page and create the virtual hosts, the ports remain closed. This happened to me when I was dealing with Vivo here in Brazil and it caused a lot of frustration. The ports I tested were 80, 443 and 8080, the first two being the most important when you are trying to host a web service. In this case, you can open non-standard higher numbered ports (such as ports above 1024), serve the pages over those ports and use a virtual machine on [AWS' Free Tier](https://aws.amazon.com/free/) as a reverse proxy. What the reverse proxy will do is intercept external traffic and redirect it to the server at home.
 
 ---
 
@@ -132,7 +132,7 @@ This is the simplest NGINX setup, using a single server for both application and
 
 ## Setup using two servers
 
-For this section, I will host some web pages on my home server. After that, I'll use a [virtual machine on AWS](/en/blog/aws-virtual-machine) to host the reverse proxy. I'll also use my domain's DNS.
+For this section, I will host some web pages on my home server. After that, I'll use a [virtual machine on AWS](/en/blog/2021/10/aws-virtual-machine/) to host the reverse proxy. I'll also use my domain's DNS.
 
 One note before we go any further: Keep in mind that when you are using a VM on AWS as a reverse proxy, all your traffic pass *through* it. This isn't a problem when you host simple web applications, but if you start generating a lot of traffic, you can get billed quite a bit. This makes it too expensive, for example, if you are setting up a file server at home, as it tends to generate a much higher volume of data than the free tier on AWS allows. Be careful not to generate unexpected costs!
 

@@ -6,7 +6,7 @@ toc = false
 comments = false
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["non-tech", "vida", "ptbr"]
+tags = ["non-tech","vida","ptbr"]
 +++
 
 Não é difícil começar coisas novas. Só que a mente humana é uma máquina incrível que tem o costume de pensar demais. Isso significa que muitas vezes temos a clareza do que precisamos fazer para começar, mas ao mesmo tempo somos impedidos de mergulhar de cabeça por um mural que nos mostra tudo o que pode dar errado e toda a massa de trabalho que teremos.

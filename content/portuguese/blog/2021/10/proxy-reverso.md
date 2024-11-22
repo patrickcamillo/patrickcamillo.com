@@ -6,7 +6,7 @@ toc = true
 comments = false
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["tech", "aws", "linux", "ptbr"]
+tags = ["tech","aws","linux","ptbr"]
 +++
 
 Este é um guia de como usar o NGINX como proxy reverso. Isso vai ser um pouco extenso, então recomendo usar o índice acima caso queira avançar para uma etapa específica.
@@ -35,7 +35,7 @@ Neste artigo, vou dar exemplos dos dois setups: usando um ou dois servidores.
 
 ## Mais exemplos de uso real antes de começar
 
-Você pode querer usar um proxy reverso quando está montando um [servidor em casa](/blog/servidor-em-casa/). A maioria das provedoras de internet impede a abertura de certas portas do roteador fornecido para clientes domésticos. Mesmo que você consiga entrar na página de configuração e criar os hosts virtuais, as portas continuam fechadas. Isso aconteceu comigo quando estava lidando com a Vivo e causou bastante frustração. As portas que eu testei foram 80, 443 e 8080, as duas primeiras sendo as mais importantes quando você está tentando hospedar um serviço web. Neste caso, é possível liberar portas não padrão de numeração mais alta (como portas acima de 1024), servir as páginas por essas portas e usar uma VM do [nível gratuito da AWS](https://aws.amazon.com/pt/free/) como proxy reverso. O que o proxy reverso vai fazer é interceptar o tráfego externo e redirecioná-lo para o servidor em casa.
+Você pode querer usar um proxy reverso quando está montando um [servidor em casa](/blog/2021/09/servidor-em-casa//). A maioria das provedoras de internet impede a abertura de certas portas do roteador fornecido para clientes domésticos. Mesmo que você consiga entrar na página de configuração e criar os hosts virtuais, as portas continuam fechadas. Isso aconteceu comigo quando estava lidando com a Vivo e causou bastante frustração. As portas que eu testei foram 80, 443 e 8080, as duas primeiras sendo as mais importantes quando você está tentando hospedar um serviço web. Neste caso, é possível liberar portas não padrão de numeração mais alta (como portas acima de 1024), servir as páginas por essas portas e usar uma VM do [nível gratuito da AWS](https://aws.amazon.com/pt/free/) como proxy reverso. O que o proxy reverso vai fazer é interceptar o tráfego externo e redirecioná-lo para o servidor em casa.
 
 ---
 
@@ -132,7 +132,7 @@ Este é o setup mais simples do NGINX, usando um único servidor tanto para as a
 
 ## Setup com dois servidores
 
-Nesta parte, vou hospedar algumas páginas web no meu servidor em casa. Depois disso, vou usar uma [máquina virtual na AWS](/blog/aws-maquina-virtual) para hospedar o proxy reverso. Também vou usar o DNS do meu domínio.
+Nesta parte, vou hospedar algumas páginas web no meu servidor em casa. Depois disso, vou usar uma [máquina virtual na AWS](/blog/2021/10/aws-maquina-virtual/) para hospedar o proxy reverso. Também vou usar o DNS do meu domínio.
 
 Uma observação antes de prosseguirmos: Tenha em mente que, ao usar uma VM na AWS como proxy reverso, todo o seu tráfego passa por ela. Isso não é um problema quando você usa aplicações web simples, mas se você começar a gerar muito tráfego, pode ser cobrado um valor bem alto. Isso acaba tornando esse método caro demais se você for montar um servidor de arquivos em casa, por exemplo, pois ele tende a gerar um volume de dados muito maior do que o nível gratuito permite. Cuidado para não gerar custos inesperados!
 

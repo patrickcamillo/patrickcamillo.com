@@ -2,6 +2,7 @@
 title = "Sobre"
 toc = true
 comments = true
+atualizado = "2024-11-22T16:56:00-03:00"
 fediverse = 113273479342053477
 +++
 
@@ -17,7 +18,7 @@ Comecei a trabalhar com TI em 2018, como analista de suporte (no papel) e SysAdm
 
 Estudei Salesforce por um tempo e me tornei [ranger no TrailHead](https://trailblazer.me/id/patrickcamillo). Senti que meu caminho ainda não é esse (apesar de ter gostado das possibilidades da plataforma), mas continuo considerando a possibilidade de migrar para lá. Também estou estudando **DevOps** e melhorando algumas habilidades de desenvolvimento de software. Em um futuro próximo vou lançar a versão inicial de alguns projetinhos bacanas no GitHub.
 
-Minha paixão está no Linux desde quando eu entrei na empresa e comecei a experimentar com ele em casa. Montei um [servidor](/blog/servidor-em-casa) e levei boa parte do conhecimento que adquiri fazendo isso para o trabalho. Linux é importante no mundo DevOps e eu tenho bastante coisa pra falar, mesmo nunca tendo trabalhado muito intensamente com ele. Veja a tag [tech](/tags/tech) do site para todos os meus artigos relacionados a tecnologia.
+Minha paixão está no Linux desde quando eu entrei na empresa e comecei a experimentar com ele em casa. Montei um [servidor](/blog/2021/09/servidor-em-casa/) e levei boa parte do conhecimento que adquiri fazendo isso para o trabalho. Linux é importante no mundo DevOps e eu tenho bastante coisa pra falar, mesmo nunca tendo trabalhado muito intensamente com ele. Veja a tag [tech](/tags/tech) do site para todos os meus artigos relacionados a tecnologia.
 
 ## Outras considerações
 
@@ -30,4 +31,4 @@ Neste site, você pode esperar ver artigos sobre alguns temas que desejo explora
 - Cozinhar umas comidinhas gostosas e;
 - Trabalhos em couro e minha relação complicada com processos artísticos.
 
-A princípio todos os meus posts terão comentários. Peço perdão por exigir login no GitHub para comentar, mas foi a melhor forma que encontrei por enquanto. É sempre saudável trocar umas ideias, então eu realmente encorajo você a dizer alguma coisinha sobre os posts pelos quais passar. Você também pode conversar diretamente comigo por [e-mail](mailto:patrick.camillo@outlook.com) ou pelo [Mastodon](https://mastodon.social/@patrickcamillo)!
+A princípio quase todas as minhas publicações terão comentários, e eles são ["hospedados" no Mastodon](/blog/2024/10/comentarios/). É sempre saudável trocar umas ideias, então eu realmente encorajo você a dizer alguma coisinha sobre os posts pelos quais passar. Você também pode conversar diretamente comigo por [e-mail](mailto:patrick.camillo@outlook.com) ou direto no [Mastodon](https://mastodon.social/@patrickcamillo)!

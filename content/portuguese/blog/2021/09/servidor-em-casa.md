@@ -6,7 +6,7 @@ toc = true
 comments = false
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["tech", "ptbr"]
+tags = ["tech","ptbr"]
 +++
 
 Nos últimos meses aprendi a configurar um servidor Linux do zero, sem interface gráfica, e estive usando aplicações hospedadas nele para facilitar algumas coisas na minha vida. O motivo para fazer assim - em vez de pagar um dos vários serviços que já existem - foi por pura vontade de aprender e fazer acontecer.
@@ -59,6 +59,6 @@ Porém é claro que para um servidor caseiro não tem problema nenhum subir dess
 
 ## Seguindo adiante
 
-Nos próximos meses pretendo estudar Docker e AWS. Com isso, vai ser útil subir uma instância EC2 (especialmente se puder ser no tier gratuito) para aprender as funcionalidades de lá. Penso em dedicar uma instância para substituir o meu servidor caseiro por um motivo muito simples: não é possível abrir as portas 80 e 443 do roteador da Vivo. Com isso, todas as minhas aplicações ficavam com uma URL como a seguinte: `https://domínio.com:9011/kimai`. Não existe nenhum problema em usar assim, exceto o fato de que não é **nada elegante**. Uma das maneiras de resolver isso é usando um [proxy reverso](/blog/proxy-reverso), porém eu mesmo não uso essa solução porque estou contente me conectando à minha rede com uma VPN do Wireguard hospedada em um router que roda [OpenWRT](https://openwrt.org/). Yep, adoro essas coisas. Pretendo escrever um artigo sobre isso, porque enfreitei problemas para configurar o Wireguard e acho que isso vai ajudar algumas pessoas.
+Nos próximos meses pretendo estudar Docker e AWS. Com isso, vai ser útil subir uma instância EC2 (especialmente se puder ser no tier gratuito) para aprender as funcionalidades de lá. Penso em dedicar uma instância para substituir o meu servidor caseiro por um motivo muito simples: não é possível abrir as portas 80 e 443 do roteador da Vivo. Com isso, todas as minhas aplicações ficavam com uma URL como a seguinte: `https://domínio.com:9011/kimai`. Não existe nenhum problema em usar assim, exceto o fato de que não é **nada elegante**. Uma das maneiras de resolver isso é usando um [proxy reverso](/blog/2021/10/proxy-reverso/), porém eu mesmo não uso essa solução porque estou contente me conectando à minha rede com uma VPN do Wireguard hospedada em um router que roda [OpenWRT](https://openwrt.org/). Yep, adoro essas coisas. Pretendo escrever um artigo sobre isso, porque enfreitei problemas para configurar o Wireguard e acho que isso vai ajudar algumas pessoas.
 
 Não pretendo aposentar o HC1 - pelo contrário. Ele continua sendo extremamente semelhante ao Raspberry Pi, o que me permite executar diversos projetos existentes internet afora com uma boa compatibilidade. Vamos ver onde isso vai me levar.

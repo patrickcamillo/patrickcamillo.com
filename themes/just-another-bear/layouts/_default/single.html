@@ -3,12 +3,25 @@
 <h1>{{ .Title }}</h1>
 <p>
   <i>
-    <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+    <time datetime='{{ .Date.Format "02 Jan 2006" | time.Format "02 Jan 2006" }}' pubdate>
+      Publicação original em: {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) | time.Format "Monday, 02 de January de 2006, 15:04" }}
     </time>
   </i>
 </p>
 {{ end }}{{ end }}
+
+{{ if (.Params.atualizado) }}
+{{- with .Params.atualizado -}}
+{{- $t := time . -}}
+<p>
+  <i>
+    <time datetime='{{ $t | time.Format "02 Jan 2006" }}' atualizado>
+      Última atualização em: {{ $t | time.Format "Monday, 02 de January de 2006, 15:04" }}
+    </time>
+  </i>
+</p>
+{{- end -}}
+{{ end }}
 
 {{ if (.Params.toc) }}
 <aside>

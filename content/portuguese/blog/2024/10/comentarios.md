@@ -1,6 +1,7 @@
 +++
 title = "Como eu implementei comentários no meu blog usando o Mastodon"
 date = "2024-10-08T17:30:00-03:00"
+atualizado = "2024-11-22T16:49:00-03:00"
 draft = false
 toc = true
 comments = true
@@ -239,6 +240,14 @@ other = "No comments found."
 Por fim, algumas alterações no estilo:
 
 ```css
+    :root {
+      --font-size: 1.0rem;
+
+      --block-border-width: 1px;
+      --block-border-radius: 3px;
+
+      --mastodon-comment-indent: 40px;
+    }
     /* Mastodon comments */
 
     .mastodon-comment {
@@ -254,6 +263,9 @@ Por fim, algumas alterações no estilo:
     }
     .mastodon-comment p {
       margin-bottom: 0px;
+    }
+    .mastodon-comment img {
+      border: none;
     }
     .mastodon-comment .author {
       padding-top:0;
@@ -326,4 +338,10 @@ O truque aqui é que você precisa postar primeiro (para gerar um id) e então e
 
 Então o link é adicionado automaticamente no final do post, bem como todas as respostas são renderizadas corretamente. Eba!
 
+## Resultado final
+
+Se tudo der certo, fica assim:
+
 ![Captura de tela de um comentário de exemplo](/images/comentarios/2024-10-08-174610.png)
+
+Se não der certo e você precisar de ajuda, pode me chamar que eu tento te apoiar!
