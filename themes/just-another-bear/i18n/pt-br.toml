@@ -14,7 +14,7 @@ other = "Remover filtro"
 other = "pt"
 
 [noscriptWarning]
-other = "Você precisa habilitar o JavaScript para ler/enviar comentários."
+other = "Você precisa habilitar o JavaScript para usar esta seção do site."
 
 [commentsDesc1]
 other = "Você pode usar sua conta no Fediverso (por exemplo Mastodon, e muitas outras redes) e responder a "
@@ -33,3 +33,6 @@ other = "Carregando comentários do Fediverso..."
 
 [noComments]
 other = "Nenhum comentário."
+
+[search]
+other = "Search"

@@ -14,7 +14,7 @@ other = "Remove filter"
 other = "en"
 
 [noscriptWarning]
-other = "You must enable JavaScript to read/send comments."
+other = "You must enable JavaScript to use this section of the website."
 
 [commentsDesc1]
 other = "You can use your Fediverse (i.e. Mastodon, among many others) account to reply to "
@@ -33,3 +33,6 @@ other = "Loading comments from the Fediverse..."
 
 [noComments]
 other = "No comments found."
+
+[search]
+other = "Pesquisa"
