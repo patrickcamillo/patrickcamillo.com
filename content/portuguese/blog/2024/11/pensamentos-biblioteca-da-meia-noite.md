@@ -4,7 +4,7 @@ date = "2024-11-23T01:26:00-03:00"
 draft = false
 toc = false
 comments = true
-fediverse = 0
+fediverse = 113530411399307811
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
 tags = ["ptbr","livros","pensamentos","non-tech"]
