@@ -1,6 +1,7 @@
 +++
-title = "Meus pensamentos sobre Um Rio Chamado Tempo, Uma Casa Chamada Terra"
+title = "Meus pensamentos sobre: Um Rio Chamado Tempo, Uma Casa Chamada Terra, de Mia Couto"
 date = "2024-11-13T23:30:00-03:00"
+atualizado = "2025-01-06T13:11:00-03:00"
 draft = false
 toc = false
 comments = true
@@ -11,6 +12,19 @@ tags = ["ptbr","livros","pensamentos","non-tech"]
 +++
 
 {{< callout emoji="ℹ️" text="Esta análise não tem revelações significativas acerca do enredo do livro." >}}
+
+## Informações sobre o livro
+
+{{< book-card
+title="Um Rio Chamado Tempo, Uma Casa Chamada Terra"
+author="Mia Couto"
+img="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1388788480i/990201.jpg"
+url-book="https://www.goodreads.com/book/show/990201.Um_Rio_Chamado_Tempo_Uma_Casa_Chamada_Terra"
+url-author="https://www.goodreads.com/author/show/49680.Mia_Couto" 
+stars="★★★★☆"
+rating="4 estrelas">}}
+
+## Análise
 
 Eu perdi poucas pessoas próximas de mim ao longo da minha vida, o que é bom. Mas perder minha avó no começo desse ano foi algo quase inédito, e ainda é cedo pra sequer estar perto de processar tudo que senti desde então. Ainda me pego pensando em diversas coisas relacionadas à forma como as coisas aconteceram, e certas lembranças me fazem chorar muito.
 

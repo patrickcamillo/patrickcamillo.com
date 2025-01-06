@@ -1,0 +1,39 @@
+<!-- Taken from: https://github.com/mr-islam/hugo-callout -->
+
+<style>
+    #card {
+      background: #f2f2f2;
+      padding: 1.5em 1.25em;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      /* border-color: darkred; */
+      border-width: 2px;
+      border-style: solid;
+    }
+    #card-inner {
+        margin-left: 1em;
+    }
+    @media (max-width: 400px) {
+      #card {
+        flex-shrink: 1 0 auto;
+        padding: 1.5em 0.75em 1.5em 0.6em;
+      }
+      #card-inner {
+        margin-left: 0.5em;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+    #card {
+        background-color: rgb(51, 51, 51);
+    }
+  </style>
+  <div id="card">
+      <div id="card-inner">
+        <a href="{{ .Get "url-book" }}" style="float: left; padding-right: 20px"><img border="0" style="width: 100px; height: auto;" alt="{{ .Get "title" }}" src="{{ .Get "img" }}" /></a>
+        {{T `bookTitle`}}: <a href="{{ .Get "url-book" }}">{{ .Get "title" }}</a><br/>
+        {{T `bookAuthor`}}: <a href="{{ .Get "url-author" }}">{{ .Get "author" }}</a><br/>
+        {{T `bookRating`}}: <span title="{{ .Get "rating" }}">{{ .Get "stars" }}</div>
+    </div>
+  </div>

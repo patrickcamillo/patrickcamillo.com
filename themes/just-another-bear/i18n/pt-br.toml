@@ -35,4 +35,13 @@ other = "Carregando comentários do Fediverso..."
 other = "Nenhum comentário."
 
 [search]
-other = "Search"
+other = "Pesquisa"
+
+[bookTitle]
+other = "Título"
+
+[bookAuthor]
+other = "Autor"
+
+[bookRating]
+other = "Minha nota"

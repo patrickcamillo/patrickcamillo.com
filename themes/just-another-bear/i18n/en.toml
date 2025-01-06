@@ -35,4 +35,13 @@ other = "Loading comments from the Fediverse..."
 other = "No comments found."
 
 [search]
-other = "Pesquisa"
+other = "Search"
+
+[bookTitle]
+other = "Title"
+
+[bookAuthor]
+other = "Author"
+
+[bookRating]
+other = "My rating"

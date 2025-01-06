@@ -1,6 +1,7 @@
 +++
-title = "Meus pensamentos sobre A Biblioteca da Meia-Noite"
+title = "Meus pensamentos sobre: A Biblioteca da Meia-Noite, de Matt Haig"
 date = "2024-11-23T01:26:00-03:00"
+atualizado = "2025-01-06T13:11:00-03:00"
 draft = false
 toc = false
 comments = true
@@ -11,6 +12,19 @@ tags = ["ptbr","livros","pensamentos","non-tech"]
 +++
 
 {{< callout emoji="⚠️" text="Esta análise TEM revelações significativas acerca do enredo do livro." >}}
+
+## Informações sobre o livro
+
+{{< book-card
+title="A Biblioteca da Meia-Noite"
+author="Matt Haig"
+img="https://m.media-amazon.com/images/I/81iqH8dpjuL._SL1500_.jpg"
+url-book="https://www.goodreads.com/book/show/57997482-a-biblioteca-da-meia-noite"
+url-author="https://www.goodreads.com/author/show/76360.Matt_Haig" 
+stars="★★★☆☆"
+rating="3 estrelas">}}
+
+## Análise
 
 Esse livro foi recomendação de um amigo. Eu já tinha colocado ele na minha lista "[não leia](https://www.goodreads.com/review/list/165050247?shelf=do-not-read)" do Goodreads por motivos diversos, mas esse amigo me convenceu dizendo que "é o livro da vida dele" e tudo mais. Resolvi dar uma chance e ler sem preconceitos.
 
