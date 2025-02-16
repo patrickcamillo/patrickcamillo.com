@@ -13,6 +13,6 @@ Você pode me encontrar nas seguintes redes, se isso for a sua praia:
 {{< awesome fab fa-youtube >}} [YouTube](https://www.youtube.com/c/PatrickCamillo)  
 {{< awesome fab fa-github >}} [GitHub](https://github.com/patrickcamillo)  
 {{< awesome fab fa-linkedin >}} [LinkedIn](https://www.linkedin.com/in/patrickcamillo/)  
-{{< awesome fas fa-envelope >}} [Email](mailto:patrick.camillo@outlook.com)  
+{{< awesome fas fa-envelope >}} [Email](mailto:pc@patrickcamillo.com)  
 
 Convido você a ler meus [trabalhos e projetos](/blog) e emitir sua opinião acerca deles ou tirar dúvidas comigo. A ideia disso aqui é ser uma via de mão dupla pra todo mundo aprender alguma coisa no final - tanto eu quanto você.

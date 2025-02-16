@@ -31,4 +31,4 @@ On this website, you can expect to see articles about some other themes I want t
 - Cooking some tasty food and;
 - Leatherworking and my complicated relationship with artistic processes.
 
-In principle, all my posts will have comments, and they are "hosted" on Mastodon. It's always good to exchange ideas, so I really encourage you to say something about the posts you see. You can also chat to me directly via [email](mailto:patrick.camillo@outlook.com) or [Mastodon](https://mastodon.social/@patrickcamillo) directly!
+In principle, all my posts will have comments, and they are "hosted" on Mastodon. It's always good to exchange ideas, so I really encourage you to say something about the posts you see. You can also chat to me directly via [email](mailto:pc@patrickcamillo.com) or [Mastodon](https://mastodon.social/@patrickcamillo) directly!

@@ -69,8 +69,6 @@ Add a `custom_head.html`-file to your `layouts/partials`-directory. In there you
 ## Issues / Feedback / Contributing
 Please use [GitLab issues](https://gitlab.com/pckcml/just-another-bear/-/issues) and [Merge Requests](https://gitlab.com/pckcml/just-another-bear/-/merge_requests).
 
-If you do not have a GitLab-account, please hit me up via [e-mail](mailto:patrick.camillo@outlook.com).
-
 ## Special Thanks 🎁
 
 A special thank you goes out to [Herman](https://herman.bearblog.dev), for creating the original [ʕ•ᴥ•ʔ Bear Blog](https://bearblog.dev/) and [Jan Raasch](https://www.janraasch.com/) for creating the first iteration of the [Hugo ʕ•ᴥ•ʔ Bear Blog Theme](https://github.com/janraasch/hugo-bearblog).

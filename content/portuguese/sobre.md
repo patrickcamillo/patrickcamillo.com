@@ -31,4 +31,4 @@ Neste site, você pode esperar ver artigos sobre alguns temas que desejo explora
 - Cozinhar umas comidinhas gostosas e;
 - Trabalhos em couro e minha relação complicada com processos artísticos.
 
-A princípio quase todas as minhas publicações terão comentários, e eles são ["hospedados" no Mastodon](/blog/2024/10/comentarios/). É sempre saudável trocar umas ideias, então eu realmente encorajo você a dizer alguma coisinha sobre os posts pelos quais passar. Você também pode conversar diretamente comigo por [e-mail](mailto:patrick.camillo@outlook.com) ou direto no [Mastodon](https://mastodon.social/@patrickcamillo)!
+A princípio quase todas as minhas publicações terão comentários, e eles são ["hospedados" no Mastodon](/blog/2024/10/comentarios/). É sempre saudável trocar umas ideias, então eu realmente encorajo você a dizer alguma coisinha sobre os posts pelos quais passar. Você também pode conversar diretamente comigo por [e-mail](mailto:pc@patrickcamillo.com) ou direto no [Mastodon](https://mastodon.social/@patrickcamillo)!

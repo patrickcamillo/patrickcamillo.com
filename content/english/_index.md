@@ -13,6 +13,6 @@ You can find me on these networks, if that's your thing:
 {{< awesome fab fa-youtube >}} [YouTube](https://www.youtube.com/c/PatrickCamillo)  
 {{< awesome fab fa-github >}} [GitHub](https://github.com/patrickcamillo)  
 {{< awesome fab fa-linkedin >}} [LinkedIn](https://www.linkedin.com/in/patrickcamillo/)  
-{{< awesome fas fa-envelope >}} [Email](mailto:patrick.camillo@outlook.com)  
+{{< awesome fas fa-envelope >}} [Email](mailto:pc@patrickcamillo.com)  
 
 Visitors are more than welcome to check out my [articles and projects](/en/blog) and tell me their opinion about them. This is supposed to be a two-way street, and both me and you can learn something from our interactions.
