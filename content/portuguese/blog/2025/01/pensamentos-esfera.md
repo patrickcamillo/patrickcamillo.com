@@ -7,7 +7,7 @@ comments = true
 fediverse = 113782340448968633
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["livros","non-tech","pensamentos","ptbr",]
+tags = ["livros","non-tech","pensamentos","ptbr","leituras-2025","mídia-2025"]
 +++
 
 {{< callout emoji="ℹ️" text="Esta análise não tem revelações significativas acerca do enredo do livro." >}}
