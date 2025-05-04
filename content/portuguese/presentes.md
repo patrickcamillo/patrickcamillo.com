@@ -7,6 +7,8 @@ atualizado = "2025-05-03T13:20:00-03:00"
 
 Olá, amigos! Resolvi escrever isso aqui pra ter o que responder às pessoas quando me perguntam o que quero ganhar. A real é que eu sou péssimo pra escolher presente até pra mim, e fico feliz com literalmente qualquer coisa.
 
+Por conta disso, os presentes dessa página aqui são **meio caros** mesmo.
+
 Vou tentar separar por categoria. Não necessariamente vou incluir um link para a loja, então fique à vontade para procurar o melhor preço. Mas vou tentar adiantar a faixa de preço pelo menos, assim você não pesquisa à toa.
 
 ## Coisas em geral
@@ -15,10 +17,11 @@ Vou tentar separar por categoria. Não necessariamente vou incluir um link para 
 - Kindle (tenho um mas é antigo e tá bem zoadinho 🤭)
 - Caixa de som JBL (da pequena, tipo [essa aqui](https://www.amazon.com.br/JBL-Bluetooth-Speaker-Preta-JBLGO4BLK/dp/B0CX5C6WP3), até uns R$ 300)
 - Uma bicicleta (é sério, mas é bom ver comigo antes)
+- Uma máquina de costura Singer Facilita Pro (usada eu já achei por uns R$ 800)
 - Celular Xiaomi Redmi Note 14 4G 256GB (até uns R$ 1200)
 - Relógio Casio AE-1300 cinza (até uns R$ 200)
 - Microfone condensador ([exemplo](https://www.amazon.com.br/Microfone-Dinâmico-Fifine-para-Jogos/dp/B0BMFQP2ZZ)) e interface de áudio ([exemplo](https://www.amazon.com.br/som-profissional-velocidade-Alto-Falantes-Computador/dp/B0D3BQR5DV)), o kit vai dar até uns R$ 500
-- Corsa Wagon 2001 4 portas com ar-condicionado, vidro e trava elétrica (qualquer cor menos branco!)
+- Corsa Wagon 2001 4 portas com direção hidráulica, ar-condicionado, vidro e trava elétrica (qualquer cor menos branco!)
 
 ## Livros
 
